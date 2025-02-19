@@ -1,0 +1,399 @@
+.shop-detail {
+    .detail-wrapper {
+        .product-image-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: clamp(32px, 3.333vw, 120px);
+            border-radius: $br-20;
+            width: 100%;
+            @include media-query(1024px){
+                justify-content: center;
+            }
+            @include media-query(575px){
+                flex-direction: column-reverse;
+                padding: 20px;
+            }
+            &.container-2{
+                flex-direction: column-reverse;
+            }
+
+            .product-slider-asnav {
+                pointer-events: auto;
+                width: 20%;
+                @include media-query(575px){
+                    width: 100%;
+                }
+                &.asnav-2{
+                    width: 100%;
+                    .slick-track {
+                        flex-direction: row;
+                        width: auto !important;
+                    }
+                }
+
+                .slick-track {
+                    display: flex;
+                    align-items: center;
+                    flex-direction: column;
+                    gap: 8px;
+                    width: max-content !important;
+                    @include media-query(575px){
+                        flex-direction: row;
+                    }
+                }
+
+                .nav-image {
+                    background-color: $lightest-gray;
+                    border-radius: 4px;
+                    padding: 8px;
+                    cursor: pointer;
+
+                    @include media-query(399px){
+                        width: clamp(48px, 18.045vw, 120px) !important;
+                    }
+
+                    &.slick-current {
+                        border: 1px solid $accent-1;
+                    }
+                }
+            }
+
+            .product-slider {
+                pointer-events: none;
+                width: 80%;
+                @include media-query(1024px){
+                    width: 35%;
+                }
+                @include media-query(575px){
+                    width: 100%;
+                }
+                &.slider-2{
+                    width: 100%;
+                }
+                
+                .detail-image{
+                    &.detail-2{
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            width: 74%;
+                            height: auto;
+                            @include media-query(1499px){
+                                width: auto;
+                            }
+                        }
+                    }
+                    img {
+                        width: 32.5vw;
+                        height: 38.906vw;
+                        @include media-query(1024px){
+                            width: auto;
+                            height: auto;
+                        }
+                    }
+                }
+               
+            }
+        }
+
+        .product-text-container {
+            padding: clamp(32px, 3.333vw, 120px);
+
+            .label {
+                padding: 4px 12px;
+                border-radius: 2px;
+                background-color: $accent-2;
+            }
+
+            .content-block {
+                .product-color {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+
+                    ul {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                    }
+
+                    // Radio Button
+                    input[type=radio] {
+                        width: 28px;
+                        height: 28px;
+                        -webkit-appearance: none;
+                        border-radius: 5px;
+
+                        @include media-query(992px) {
+                            width: 20px;
+                            height: 20px;
+                        }
+
+                        &.radio-1 {
+                            background-color: $lightest-gray;
+                        }
+
+                        &.radio-2 {
+                            background-color: $light-gray;
+                        }
+
+                        &.radio-3 {
+                            background-color: $dark-gray;
+                        }
+
+                        &.radio-4 {
+                            background-color: $black
+                        }
+
+                        &.radio-5 {
+                            background-color: $accent-3;
+                        }
+
+                        &.radio-6 {
+                            background-color: $accent-1;
+                        }
+
+                        &.radio-7 {
+                            background-color: $accent-2;
+                        }
+
+                    }
+
+                    input[type=radio]:checked {
+                        border: 3px solid $white;
+                        border-radius: 3px;
+                        outline: 1px solid $black;
+                        cursor: pointer;
+                    }
+
+                    input[type=radio]:hover {
+                        transition: $transition;
+                        cursor: pointer;
+                        border: 3px solid $white;
+                        border-radius: 3px;
+                        outline: 1px solid $black;
+                    }
+
+                    input[type=radio]:focus {
+                        outline-color: transparent;
+                    }
+                }
+            }
+
+            .cus-btn{
+                @include media-query(490px) {
+                    padding: 13.5px 16px;
+                    font-size: 14px;
+
+                }
+            }
+            .function-bar {
+                display: flex;
+                align-items: center;
+                gap: 24px;
+                @include media-query(490px) {
+                    flex-wrap: wrap;
+                }
+
+                .cart-btn {
+                    .cus-btn-2 {
+                        padding: 13.5px 32px;
+                    }
+                }
+
+                .side-icons {
+                    ul {
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        
+
+                        li {
+                            a {
+                                width: clamp(36px, 2.5vw, 96px);
+                                height: clamp(36px, 2.5vw, 96px);
+                                display: grid;
+                                align-items: center;
+                                justify-content: center;
+                                border: 1px solid $light-black;
+                                background-color: transparent;
+                                border-radius: 5px;
+                                transition: $transition;
+                                padding: 4px;
+
+                                @include media-query(490px) {
+                                    width: clamp(36px, 8.163vw, 80px);
+                                    height: clamp(36px, 8.163vw, 80px);
+                                }
+
+                                svg {
+                                    @include media-query(490px) {
+                                        width: 16px;
+                                        height: 16px;
+                                    }
+                                    path {
+                                        transition: $transition
+                                    }
+                                }
+                            }
+
+                            &:hover {
+                                a {
+                                    border: 1px solid $accent-1;
+                                    background-color: $accent-1;
+                                    transition: $transition;
+
+                                    svg {
+                                        path {
+                                            fill: $white;
+                                            transition: $transition
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.product-description {
+    @include media-query(490px){
+        margin: 0 12px;
+    }
+    .description-wrapper {
+        padding: clamp(24px, 1.667vw, 64px) clamp(48px, 3.333vw, 96px);
+        @include media-query(490px){
+            padding: 12px 24px;
+        }
+        nav {
+            .nav {
+                display: flex;
+                justify-content: center;
+                gap: clamp(20px, 1.667vw, 64px);
+                position: relative;
+                @include media-query(490px){
+                    justify-content: flex-start;
+                    row-gap: 8px;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 1px;
+                    background: $lightest-gray;
+
+                }
+
+                &.nav-tabs {
+                    border-bottom: 0;
+                }
+            }
+
+            .nav-link {
+                position: relative;
+                color: $black;
+                font-size: clamp(19px, 1.198vw, 27px);
+                font-style: normal;
+                font-weight: 500;
+                line-height: 120%;
+                letter-spacing: 0.021875vw;
+                border: 0;
+
+                @media (max-width: 1024px) {
+                    font-size: clamp(18px, 1.953vw, 24px);
+                }
+
+                @media (max-width: 768px) {
+                    font-size: clamp(18px, 2.344vw, 21px);
+                }
+
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    height: 1px;
+                    width: 0;
+                    background: $accent-1;
+                    transition: $transition;
+                }
+
+                &:focus-visible {
+                    outline: 0;
+                }
+
+                &:hover,
+                &.active {
+                    color: $accent-1;
+                    transition: $transition;
+
+                    &::after {
+                        width: 100%;
+                        transition: $transition;
+                    }
+                }
+            }
+
+
+        }
+
+        .specs-chart {
+            ul {
+                li {
+                    border-bottom: 1px solid $lightest-gray;
+
+                    .brand-block {
+                        display: flex;
+                        align-items: center;
+                        gap: 16px;
+                        padding: 4px 0;
+
+                        .item {
+                            width: 13.073vw;
+                            @include media-query(768px) {
+                                width: 150px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .comments-sec {
+            .comment-box {
+                display: flex;
+                align-items: flex-start;
+                gap: 24px;
+
+                @include media-query(575px) {
+                    gap: 12px;
+                }
+
+                img {
+                    @include media-query(575px) {
+                        width: 42px;
+                        height: 42px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.input-block {
+    position: relative;
+
+    svg {
+        position: absolute;
+        right: 16px;
+        top: 19px;
+    }
+}

@@ -1,0 +1,56 @@
+
+.inner-banner{
+    background: url('../media/bg/inner-banner.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: clamp(170px, 10.417vw, 300px);
+    display: grid;
+    align-items: center;
+    @include media-query(1699px){
+        height: 210px;
+    }
+    @include media-query(490px){
+        height: 500px;
+    }
+    .inner-content{
+        display: flex;
+        align-content: center;
+        justify-content: space-between;
+        place-items: center;
+        @include media-query(1024px){
+            justify-content: unset;
+            gap: 32px;
+        }
+        @include media-query(490px){
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 48px;
+            text-align: center;
+        }
+        &.v-2{
+            @include media-query(490px){
+                gap: 94px;
+            }
+        }
+        .inner-image{
+            img{
+                @include media-query(1024px){
+                    width: 80%;
+                }
+                @include media-query(490px){
+                    width: 75%;
+                }
+            }
+        }
+        .inner-image-2{
+            img{
+                @include media-query(1024px){
+                    width: 85%;
+                }
+                @include media-query(490px){
+                    width: 70%;
+                }
+            }
+        }
+    }
+}

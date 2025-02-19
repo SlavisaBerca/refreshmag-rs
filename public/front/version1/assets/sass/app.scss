@@ -1,0 +1,147 @@
+/*---------------------------------------------"
+// Template Name: Accessory Store
+// Description: Accessory Store Html Template
+// Version: 1.0.0
+
+===============================================   
+STYLE SHEET INDEXING
+|
+|___ Fonts
+|___ Variables
+|___ Responsive
+|___ Reset Styles
+|___ Spacing
+|___ Helper Classes
+|___ Buttons
+|___ Headings
+|___ Layout Styles
+|___ END STYLE SHEET INDEXING
+
+--------------------------------------------*/
+
+/*-------------------------
+    Fonts
+-------------------------*/
+
+// FONT ==> Bai Jamjuree <==
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+/*-------------------------
+    Variables
+-------------------------*/
+/* Fonts */
+$font-primary: "Bai Jamjuree", sans-serif;
+$font-awesome: "Font Awesome 6 Pro";
+
+/* Colors */
+$accent-1: #006937;
+$accent-2: #DD3842;
+$accent-3: #ffe603;
+$black: #0C0C0D;
+$light-black: #141516;
+$dark-gray: #45474F;
+$lightest-gray: #EAEAEC;
+$light-gray: #6d6d6d;
+$white: #fafafa;
+
+
+// $medium-gray: #92949F;
+
+/* Transitions */
+$transition: all .5s ease-in-out;
+
+/* Gradients */
+$box-shadow-1: 0px 4px 20px 0px rgba(0, 0, 0, 0.12);
+
+/* Border-Radius */
+$br-5: 5px;
+$br-10: clamp(6px, 0.521vw, 20px);
+$br-15: clamp(8px, 0.781vw, 30px);
+$br-20: clamp(10px, 1.042vw, 32px);
+$br-25: clamp(12px, 1.302vw, 40px);
+$br-30: clamp(15px, 1.563vw, 50px);
+
+/*-------------------------
+    Responsive Styles
+-------------------------*/
+@import "helpers/mixin";
+
+/*-------------------------
+    Reset Styles
+-------------------------*/
+@import "basic/basic";
+
+/*-------------------------
+Helpers
+-------------------------*/
+@import "helpers/classes";
+
+
+@import "helpers/spacing";
+
+/*-------------------------
+Elements
+-------------------------*/
+
+@import "elements/buttons";
+
+@import "elements/form";
+
+@import "elements/dropdown";
+
+@import "elements/modal-box";
+
+@import "elements/country-flag";
+
+/*-------------------------
+  layouts
+-------------------------*/
+@import "layout/header";
+
+@import "layout/hero-banner";
+
+@import "layout/categories-tab";
+
+@import "layout/product-card";
+
+@import "layout/inner-banner";
+
+@import "layout/brand-slider";
+
+@import "layout/blogs";
+
+@import "layout/coming-soon";
+
+@import "layout/newsletter";
+
+@import "layout/benefits";
+
+@import "layout/footer";
+
+@import "layout/title-banner";
+
+@import "layout/sidebar";
+
+@import "layout/shop";
+
+@import "layout/shop-detail";
+
+@import "layout/blog-detail";
+
+@import "layout/about";
+
+@import "layout/contact";
+
+@import "layout/register";
+
+@import "layout/cart";
+
+@import "layout/checkout";
+
+@import "layout/error";
+
+@import "layout/cart-sidebar";
+
+@import "layout/compare";
+
+

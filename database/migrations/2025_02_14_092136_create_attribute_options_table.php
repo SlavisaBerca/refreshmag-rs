@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('attribute_options', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('attributable_id');
+            $table->string('attributable_type');
+            $table->bigInteger('attribute_id');
+            $table->string('name');
+            $table->float('value')->default('0');
+            $table->bigInteger('position');
+            $table->tinyInteger('status')->default(0);
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('attribute_options');
+    }
+};

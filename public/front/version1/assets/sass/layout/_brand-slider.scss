@@ -1,0 +1,27 @@
+
+
+.brand-sec{
+    .brand-slider{
+        margin: 0 -8px;
+        padding: 2.083vw 0;
+        width: 100%;
+        @include media-query(490px){
+            padding: clamp(32px, 8.163vw, 80px) 0;
+        }
+        .brand-block{
+            width: 13.958vw;
+            height: clamp(70px, 4.792vw, 160px);
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $lightest-gray;
+            border-radius: 5px;
+            margin: 0 8px;
+            @include media-query(490px){
+                width: clamp(200px, 48.98vw, 550px);
+                height: clamp(48px, 13.061vw, 120px);
+                padding: 0 8px;
+            }
+        }
+    }
+}

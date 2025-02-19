@@ -1,0 +1,75 @@
+
+.categories-sec{
+    .categories-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        @include media-query(576px){
+            flex-wrap: wrap;
+            row-gap: 24px;
+        }
+        .category-block{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            transition: $transition;
+            padding: 0 8px;
+            &:nth-child(6){
+                @include media-query(1024px){
+                    display: none;
+                }
+            }
+            &:nth-child(7){
+                @include media-query(1199px){
+                    display: none;
+                }
+            }
+            &:nth-child(8){
+                @include media-query(1199px){
+                    display: none;
+                }
+                @include media-query(576px){
+                    display: block;
+                }
+            }
+            &:nth-child(9){
+                @include media-query(1499px){
+                    display: none;
+                }
+            }
+            &:nth-child(10){
+                @include media-query(1499px){
+                    display: none;
+                }
+            }
+            &:nth-child(11){
+                @include media-query(1499px){
+                    display: none;
+                }
+            }
+            .image-box{
+                background: $lightest-gray;
+                width: clamp(84px, 5.208vw, 180px);
+                height: clamp(84px, 5.208vw, 180px);
+                border: 2px solid $lightest-gray;
+                border-radius: 50%;
+                display: grid;
+                align-items: center;
+                transition: $transition;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            &:hover{
+                .image-box{
+                    border: 2px solid $accent-1;
+                    transition: $transition;
+                }
+                transform: scale(1.1);
+                transition: $transition;
+            }
+        }
+    }
+}

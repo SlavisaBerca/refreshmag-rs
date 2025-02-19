@@ -1,0 +1,128 @@
+// Text Colors
+.color-primary {
+  color: $accent-1;
+}
+.color-sec {
+  color: $accent-2;
+}
+.color-ter {
+  color: $accent-3;
+}
+
+.dark-black {
+  color: $black !important;
+}
+
+.light-black {
+  color: $light-black;
+}
+
+.white {
+  color: $white !important;
+}
+
+.dark-gray {
+  color: $dark-gray;
+}
+
+.light-gray {
+  color: $light-gray;
+}
+
+.lightest-gray {
+  color: $lightest-gray;
+}
+
+
+// Background Colors
+.bg-color-primary {
+  background-color: $accent-1;
+}
+
+.bg-color-sec {
+  background-color: $accent-2;
+}
+
+.bg-dark-black {
+  background-color: $black;
+}
+
+.bg-light-black {
+  background-color: $light-black;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+.bg-dark-gray {
+  background-color: $dark-gray;
+}
+
+.bg-light-gray {
+  background-color: $light-gray;
+}
+
+.bg-lightest-gray {
+  background-color: $lightest-gray;
+}
+
+// Gradient Color
+.accent-gradient {
+  background-color: linear-gradient(180deg, rgba(47, 61, 126, 0.00) 0%, rgba(47, 61, 126, 0.40) 0.01%, rgba(47, 61, 126, 0.20) 45.5%, rgba(47, 61, 126, 0.40) 100%);
+}
+
+.box-shadow-1{
+  box-shadow: $box-shadow-1;
+}
+
+// ------------- Font Weight -------------- //
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-500 {
+  font-weight: 500;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-800 {
+  font-weight: 800;
+}
+
+.font-primary{
+  font-family: $font-primary;
+}
+
+// ------------- Border Radius -------------- //
+
+.br-5{
+  border-radius: $br-5;
+}
+.br-10{
+  border-radius: $br-10;
+}
+.br-15{
+  border-radius: $br-15;
+}
+.br-20{
+  border-radius: $br-20;
+}
+.br-25{
+  border-radius: $br-25;
+}
+.br-30{
+  border-radius: $br-30;
+}
+
+
+.cursor-pointer{
+  cursor: pointer;
+}

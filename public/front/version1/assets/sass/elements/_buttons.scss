@@ -1,0 +1,486 @@
+.back-to-top {
+  position: fixed;
+  bottom: 0px;
+  right: 12px;
+  display: block;
+  width: 120px;
+  height: 120px;
+  font-size: 100px;
+  padding: 11px 0;
+  border-radius: 10px;
+  background: $accent-1;
+  color: $white;
+  text-align: center;
+  opacity: 0;
+  text-decoration: none;
+  -webkit-transform: scale(0.3);
+  -ms-transform: scale(0.3);
+  transform: scale(0.3);
+  z-index: 999;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+
+  &:hover {
+      background: $accent-1;
+      color: $white;
+  }
+
+  &.show {
+      opacity: 1;
+  }
+
+  @include media-query(490px) {
+      right: -20px;
+      bottom: -20px;
+  }
+}
+
+
+.cus-btn {
+  position: relative;
+  background-color: $accent-1;
+  padding: clamp(10px, 0.938vw, 24px) clamp(24px, 1.667vw, 54px) ;
+  border-radius: 5px;
+  border: 1px solid $accent-1;
+  overflow: hidden;
+  transition: .3s;
+  z-index: 1;
+  font-size: clamp(15px, 0.833vw, 22px);
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.64px;
+  text-transform: capitalize;
+  font-family: $font-primary;
+  text-align: center;
+  color: $white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+
+  @media (max-width: 1199px) {
+    font-size: clamp(14px, 1.251vw, 18px);
+  }
+
+  @media (max-width: 575px) {
+    font-size: clamp(14px, 3.061vw, 14px);
+    padding: 12px 16px;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    background: $white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+
+  }
+
+  &:hover {
+    color: $black;
+    transition: $transition;
+    border: 1px solid $black;
+
+    &::before {
+      width: 105%;
+    }
+  }
+
+  &.sec{
+    background-color: $white;
+    border: 1px solid $white;
+    color: $black;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 300%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(5deg);
+      background: $accent-1;
+      transition: .5s ease;
+      display: block;
+      z-index: -1;
+    }
+    &:hover {
+      color: $white;
+      transition: $transition;
+      border: 1px solid $accent-1;
+  
+      &::before {
+        width: 105%;
+      }
+    }
+  }
+}
+.cus-btn-2 {
+  position: relative;
+  background-color: transparent;
+  padding: clamp(8px, 0.625vw, 24px) clamp(24px, 1.667vw, 54px) ;
+  border-radius: 5px;
+  border: 1px solid $accent-1;
+  overflow: hidden;
+  transition: .3s;
+  z-index: 1;
+  font-size: clamp(15px, 0.833vw, 22px);
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.64px;
+  text-transform: capitalize;
+  font-family: $font-primary;
+  text-align: center;
+  color: $accent-1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+
+  @media (max-width: 1199px) {
+    font-size: clamp(14px, 1.251vw, 18px);
+  }
+
+  @media (max-width: 575px) {
+    font-size: clamp(14px, 3.061vw, 19px);
+    padding: 12px 16px;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    background: $accent-1;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+
+  }
+
+  &:hover {
+    color: $white;
+    transition: $transition;
+    border: 1px solid $accent-1;
+
+    &::before {
+      width: 105%;
+    }
+  }
+}
+
+.cus-btn-3 {
+  position: relative;
+  background-color: $accent-1;
+  padding: clamp(8px, 0.625vw, 24px) clamp(24px, 1.667vw, 54px) ;
+  border-radius: 5px;
+  border: 1px solid $accent-1;
+  overflow: hidden;
+  transition: .3s;
+  z-index: 1;
+  font-size: clamp(15px, 0.833vw, 22px);
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0.64px;
+  text-transform: capitalize;
+  font-family: $font-primary;
+  text-align: center;
+  color: $white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: max-content;
+
+  @media (max-width: 1199px) {
+    font-size: clamp(14px, 1.251vw, 18px);
+  }
+
+  @media (max-width: 575px) {
+    font-size: clamp(14px, 3.061vw, 14px);
+    padding: 12px 16px;
+  }
+
+  &::before {
+    content: '';
+    width: 0;
+    height: 300%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(5deg);
+    background: $white;
+    transition: .5s ease;
+    display: block;
+    z-index: -1;
+
+  }
+
+  &:hover {
+    color: $black;
+    transition: $transition;
+    border: 1px solid $black;
+
+    &::before {
+      width: 105%;
+    }
+  }
+
+  &.sec{
+    background-color: $white;
+    border: 1px solid $white;
+    color: $black;
+
+    &::before {
+      content: '';
+      width: 0;
+      height: 300%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(5deg);
+      background: $accent-1;
+      transition: .5s ease;
+      display: block;
+      z-index: -1;
+    }
+    &:hover {
+      color: $white;
+      transition: $transition;
+      border: 1px solid $accent-1;
+  
+      &::before {
+        width: 105%;
+      }
+    }
+  }
+}
+
+.cus-btn-arrow{
+  color: $black;
+  transition: $transition;
+  font-weight: 500;
+  display: flex;
+  align-items: center; 
+  gap: 8px; 
+  svg{
+    path{
+      transition: $transition;
+    }
+  }
+  &:hover{
+    color: $accent-1;
+    transition: $transition;
+
+    svg{
+      path{
+        transition: $transition;
+        stroke: $accent-1;
+      }
+    }
+  }
+}
+
+// ===================  SLICK SILDER BUTTONS =================== //
+.slider-arrow{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  .arrow{
+    background: transparent;
+    border: 1px solid $light-black;
+    border-radius: 5px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    transition: $transition;
+    padding: 0;
+    
+    svg{
+      path{
+        stroke: $light-black;
+        transition: $transition;
+      }
+    }
+    &:hover{
+      border: 1px solid $accent-1;
+      transition: $transition;
+      background: $accent-1;      
+      svg{
+        path{
+          stroke: $white;
+          transition: $transition;
+        }
+      }
+    }
+  }
+} 
+// ===================  SLICK SILDER BUTTONS =================== // 
+
+// ===================  Quantity BUTTONS =================== //
+.quantity {
+  display: flex;
+  align-items: flex-start;
+  border: 1px solid $light-black;
+  border-radius: 5px;
+  padding: 9.5px 16px;
+  @include media-query(490px){
+    padding: 10px 16px;
+}
+
+  .input-area {
+    display: flex;
+
+    input {
+      display: grid;
+      align-content: center;
+      border: none;
+      border-radius: 0px;
+      text-align: center;
+      font-weight: 500;
+      font-size: 21px;
+      background-color: transparent;
+      color: $black;
+      padding: 0 8px;
+      width: 32px;
+
+      @media (max-width: 992px) {
+        font-size: 20x;
+      }
+
+      @media (max-width: 767px) {
+        font-size: 18x;
+      }
+
+      @media (max-width: 575px) {
+        font-size: 17px;
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &.decrement {
+        font-size: 44px;
+        font-weight: 200;
+        border-radius: 0;
+        border: 0;
+        margin-top: -8px;
+      }
+
+      &.increment {
+        font-size: 34px;
+        font-weight: 200;
+        border-radius: 0;
+        border: 0;
+      }
+
+      &.number {
+        padding: 0;
+        background: transparent;
+        font-size: 21px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 130%;
+      }
+    }
+  }
+} 
+// ===================  Quantity BUTTONS =================== // 
+
+
+// ===================  PAGINATIONS =================== // 
+.pagination {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  overflow: hidden;
+  display: flex;
+
+  #border-pagination {
+    display: flex;
+    gap: 8px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+
+    li {
+      display: inline;
+      span{
+        color: $dark-gray;
+        transition: $transition;
+      }
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: $black;
+        background-color: $white;
+        width: clamp(28px, 1.667vw, 64px);
+        height: clamp(28px, 1.667vw, 64px);
+        border: 1px solid $black;
+        border-radius: 5px;
+        float: left;
+        transition: $transition;
+        font-size: clamp(15px, 0.833vw, 22px);
+        font-weight: 500;
+        line-height: 120%;
+        letter-spacing: -0.62px;
+
+        svg {
+          path {
+            stroke: $black;
+            transition: $transition;
+          }
+        }
+
+        &.active {
+          background-color: $accent-1;
+          color: $white;
+          border: 1px solid $accent-1;
+
+          svg {
+            path {
+              stroke: $white;
+              transition: $transition;
+            }
+          }
+        }
+
+        &:hover {
+          background-color: $accent-1;
+          color: $white;
+          border: 1px solid $accent-1;
+
+          svg {
+            path {
+              stroke: $white;
+              transition: $transition;
+            }
+          }
+        }
+      }
+
+      &:hover{
+        span{
+          color: $white;
+          transition: $transition;
+        }
+      }
+    }
+  }
+}

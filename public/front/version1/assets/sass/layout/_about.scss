@@ -1,0 +1,139 @@
+.about-section {
+    .about-wrapper {
+        padding: clamp(16px, 1.25vw, 32px);
+        border-radius: $br-20;
+
+        .about-block {
+            .about-content {
+                padding: 0 clamp(12px, 3.333vw, 120px);
+                @include media-query(490px){
+                    padding: 0;
+                }
+            }
+        }
+    }
+}
+
+.whyChoose-us {
+    .our-block {
+        padding: clamp(16px, 1.25vw, 36px);
+
+        .icon-block {
+            width: clamp(34px, 2.5vw, 72px);
+            height: clamp(34px, 2.5vw, 72px);
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $accent-1;
+            border-radius: 5px;
+        }
+    }
+}
+
+.team-section {
+    .team-block {
+        padding: clamp(16px, 1.25vw, 32px);
+        border-radius: $br-10;
+    }
+}
+
+// Faq 
+.faq {
+    .faq-block {
+        padding: 24px;
+        padding-right: 26px;
+        background: $white;
+        border-radius: $br-5;
+        margin-bottom: clamp(14px, 1.25vw, 32px);
+        
+
+        .accordion-button {
+            margin: 0;
+            position: relative;
+            padding: 0;
+            font-weight: 500;
+            font-size: 21px;
+            line-height: 130%;
+
+
+            @media (max-width: 992px) {
+                font-size: 20px;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 19px;
+            }
+
+            @media (max-width: 575px) {
+                font-size: 18px;
+            }
+            @include media-query(490px){
+                padding-right: 40px;
+            }
+            &.collapsed {
+                border-radius: 0px;
+                padding: 0;
+                background: none;
+                margin: 0;
+                @include media-query(490px){
+                    padding-right: 40px;
+                }
+                
+
+                &::after {
+                    background-image: none !important;
+                    color: $light-black;
+                    content: "\f067";
+                    font-family: $font-awesome;
+                }
+            }
+
+            &:not(.collapsed) {
+                color: $black;
+                background: transparent;
+                border: none;
+                box-shadow: none;
+            }
+
+            &:focus {
+                border: none;
+                box-shadow: none;
+            }
+
+            &::after {
+                content: "\f068";
+                font-family: $font-awesome;
+                background-image: none !important;
+                position: absolute;
+                right: 0;
+                font-weight: 300;
+                font-size: 24px;
+                cursor: pointer;
+
+            }
+        }
+
+        .accordion-collapse {
+            p {
+                margin-top: clamp(21px, 1.25vw, 48px);
+
+                @include media-query(991px) {
+                    margin-top: 2.117vw;
+                }
+
+                @include media-query(767px) {
+                    margin-top: 1.613vw;
+                }
+            }
+        }
+    }
+}
+
+.title-row {
+    padding: clamp(8px, 0.521vw, 20px);
+    border-radius: 5px;
+    background: $white;
+    &.title-row-2{
+        padding: clamp(6px, 0.521vw, 20px) clamp(16px, 1.25vw, 40px);
+    }
+}

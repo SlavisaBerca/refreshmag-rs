@@ -1,0 +1,44 @@
+.title-banner {
+    background: url('../media/banner/title-banner.png') no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    height: clamp(150px, 10.417vw, 350px);
+    display: grid;
+    align-items: center;
+
+    @include media-query(490px) {
+        height: 100px;
+    }
+
+    .banner-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+
+        .banner-image1 {
+            width: clamp(107px, 20.885vw, 520px);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include media-query(490px) {
+                display: none;
+            }
+        }
+
+        .banner-image2 {
+            width: clamp(68px, 11.797vw, 220px);
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include media-query(490px) {
+                display: none;
+            }
+        }
+    }
+}

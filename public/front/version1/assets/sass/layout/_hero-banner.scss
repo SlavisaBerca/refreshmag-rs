@@ -1,0 +1,57 @@
+.hero-banner {
+    .banner-right {
+        position: relative;
+        @include media-query(1299px) {
+            width: 100%;
+        }
+
+        .banner-content-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: url('../media/banner/banner-1.png') no-repeat;
+            background-position: center;
+            background-size: cover;
+            height: clamp(370px, 24.167vw, 650px);
+            border-radius: $br-10;
+            padding: clamp(48px, 3.333vw, 94px);
+
+            @include media-query(575px) {
+                height: 500px;
+                flex-direction: column;
+            }
+
+            &.v-2 {
+                padding: clamp(24px, 1.25vw, 48px);
+                height: clamp(180px, 11.667vw, 480px);
+                background: url('../media/banner/banner-2.png') no-repeat;
+                background-size: cover;
+
+                @include media-query(575px) {
+                    height: 350px;
+                    flex-direction: column;
+                    background-position: right;
+                }
+            }
+
+            &.v-3 {
+                padding: clamp(24px, 1.25vw, 48px);
+                height: clamp(180px, 11.667vw, 480px);
+                background: url('../media/banner/banner-3.png') no-repeat;
+                background-size: cover;
+
+                @include media-query(575px) {
+                    height: 350px;
+                    flex-direction: column;
+                    background-position: right;
+                }
+            }
+
+            .text-box {
+                @include media-query(1399px) {
+                    width: -webkit-fill-available;
+                }
+            }
+        }
+    }
+}

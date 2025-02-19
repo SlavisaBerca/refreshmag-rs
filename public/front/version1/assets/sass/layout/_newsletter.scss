@@ -1,0 +1,36 @@
+
+.newsletter-section{
+    .newsletter-container{
+        text-align: center;
+        padding: clamp(32px, 2.5vw, 64px);
+        .newsletter-image{
+            width: clamp(48px, 3.333vw, 94px);
+            height: clamp(48px, 3.333vw, 94px);
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid $accent-1;
+            border-radius: 6px;
+        }
+        form{
+            position: relative;
+            button{
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                @include media-query(1599px) {
+                    padding: 18px;
+                }
+
+                @include media-query(1024px) {
+                    padding: 19px;
+                }
+        
+                  @include media-query(490px) {
+                    padding: 14px 8px;
+                }
+            }
+        }
+    }
+}
