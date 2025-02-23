@@ -185,216 +185,55 @@
                                         <span class="all-navigator"><i class="fas fa-bars" aria-hidden="true"></i> <span>{{ $defaultContent['lang012'] }}</span>
                                         </span>
                                         <span class="all-category-list list-unstyled">
-                                            <span class="all-category-list-item"><a href="shop-grid-1.html"
-                                                    class="all-category-list-link dark-black fw-500">Value Of The Day
-                                                 </a>
-                                            </span>
-                                            <span class="all-category-list-item"><a href="shop-grid-1.html"
-                                                    class="all-category-list-link dark-black fw-500">Top 100 Offers</a></span>
-                                            <span class="all-category-list-item"><a href="shop-grid-1.html"
-                                                    class="all-category-list-link dark-black fw-500">New Arrivals</a></span>
-                                            <span class="all-category-list-item"><a href="javascript:;" class="all-category-list-link d-flex align-items-center justify-content-between">Laptop & Computer<i class="fas fa-angle-right" aria-hidden="true"></i></a>
-                                                <span class="category-second-list">
-                                                    <span class="sub-menu-main-wrapper">
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled mb-40">
-                                                                <span class="dark-black fw-500 mb-16">Brands</span>
-                                                                <span class="category-second-item"><a href="">Apple </a></span>
-                                                                <span class="category-second-item"><a href="">Dell</a></span>
-                                                                <span class="category-second-item"><a href="">Asus </a></span>
-                                                                <span class="category-second-item"><a href="">Acer </a></span>
-                                                                <span class="category-second-item"><a href="">MSI </a></span>
-                                                                <span class="category-second-item"><a href="">Lenovo </a></span>
-                                                            </span>
-                                                            <span class="category-second-list-ul list-unstyled">
-                                                                <span class="dark-black fw-500 mb-16">Devices</span>
-                                                                <span class="category-second-item"><a href="">Printer and Ink</a></span>
-                                                                <span class="category-second-item"><a href="">Project and Screen</a></span>
-                                                                <span class="category-second-item"><a href="">Network Adaptor</a></span>
-                                                                <span class="category-second-item"><a href="">Photocopy and Scanner</a></span>
-                                                            </span>
-                                                        </span>
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled mb-40">
-                                                                <span class="dark-black fw-500 mb-16">Models</span>
-                                                                <span class="category-second-item"><a href="">Office Computer</a></span>
-                                                                <span class="category-second-item"><a href="">Business Computer</a></span>
-                                                                <span class="category-second-item"><a href="">Gaming Computer</a></span>
-                                                                <span class="category-second-item"><a href="">Programming Computer</a></span>
-                                                            </span>
-                                                            <span class="category-second-list-ul list-unstyled">
-                                                                <span class="dark-black fw-500 mb-16">Prices</span>
-                                                                <span class="category-second-item"><a href="">Up to $200</a></span>
-                                                                <span class="category-second-item"><a href="">$500 to $1000</a></span>
-                                                                <span class="category-second-item"><a href="">$1000 to $2000</a></span>
-                                                                <span class="category-second-item"><a href="">$2000 to $3000</a></span>
-                                                                <span class="category-second-item"><a href="">$3000 to $4000</a></span>
-                                                                <span class="category-second-item"><a href="">$4000 to $5000</a></span>
+                                            @foreach($getCategories as $mainCategory)
+                                                    @if($mainCategory->type == 'mega')
+                                                        <span class="all-category-list-item">
+                                                            <a href="javascript:;" class="all-category-list-link d-flex align-items-center justify-content-between">
+                                                                Smartphone & Tablets <i class="fas fa-angle-right" aria-hidden="true"></i>
+                                                            </a>
+                                                            <span class="category-second-list">
+                                                                <span class="sub-menu-main-wrapper">
+                                                                    <!-- Initialize counter to group items into two columns per row -->
+                                                                    @foreach($mainCategory->getSubcategories as $key => $mainSub)
+                                                                        @if($key % 2 == 0)
+                                                                            <!-- Start a new row after every two items -->
+                                                                            <div class="category-row">
+                                                                        @endif
+                                                                        <span class="wrapper-1">
+                                                                            <span class="category-second-list-ul list-unstyled mb-40">
+                                                                                <span class="dark-black fw-500 mb-8">{{ $mainSub->getName() }}</span>
+                                                                        @foreach($mainSub->getChildrens as $mainChild)
+                                                                                <span class="category-second-item"><a href="{{ route('shop.by',['param'=>'child','slug'=>$mainChild->slug]) }}">{{ $mainChild->getName() }}</a></span>
+                                                                        @endforeach
+                                                                               
+                                                                            </span>
+                                                                        </span>
+                                                                        @if($key % 2 == 1 || $loop->last)
+                                                                            <!-- End the row after every second item or on the last iteration -->
+                                                                        </div>
+                                                                        @endif
+                                                                    @endforeach
+                                                                </span>
+                                                                <span class="img-product-menu v-3">
+                                                                    <span class="image-content">
+                                                                        <span class="d-block h6 fw-400 white mb-4p">MOBIME</span>
+                                                                        <span class="d-block h6 fw-500 white mb-24">Mobile Phone</span>
+                                                                        <span class="text-16 white mb-4p">Just from:</span>
+                                                                        <span class="d-block h4 color-ter mb-32">$500.99</span>
+                                                                        <a href="shop-list-1.html" class="cus-btn-3 sec">Shop Now</a>
+                                                                    </span>
+                                                                </span>
                                                             </span>
                                                         </span>
-                                                    </span>
-                                                    <span class="img-product-menu">
-                                                        <span class="image-content">
-                                                            <span class="h6 d-block fw-400 white mb-4p">LCD</span>
-                                                            <span class="h6 d-block fw-500 white mb-24">Radient View LCD</span>
-                                                            <span class="d-block text-16 white mb-4p">Just from:</span>
-                                                            <span class="d-block h4 color-ter mb-32">$840.99</span>
-                                                            <a href="shop-list-1.html" class="cus-btn-3 sec">Shop Now</a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="all-category-list-item"><a href="javascript:;" class="all-category-list-link d-flex align-items-center justify-content-between">Computer Hardware<i class="fas fa-angle-right" aria-hidden="true"></i></a>
-                                                <span class="category-second-list">
-                                                    <span class="sub-menu-main-wrapper">
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled mb-40">
-                                                                <span class="dark-black fw-500 mb-16">Hardware</span>
-                                                                <span class="category-second-item"><a href="">CPU, Processor </a></span>
-                                                                <span class="category-second-item"><a href="">Motherboard</a></span>
-                                                                <span class="category-second-item"><a href="">RAM, Memory</a></span>
-                                                                <span class="category-second-item"><a href="">VGA, Graphic Card </a></span>
-                                                                <span class="category-second-item"><a href="">PSU, Power Supply</a></span>
-                                                                <span class="category-second-item"><a href="">Cooling Systems</a></span>
-                                                            </span>
-                                                            <span class="category-second-list-ul list-unstyled">
-                                                                <span class="dark-black fw-500 mb-16">Others</span>
-                                                                <span class="category-second-item"><a href="">Security</a></span>
-                                                                <span class="category-second-item"><a href="">Barcode Scanner</a></span>
-                                                                <span class="category-second-item"><a href="">Attendence Machines</a></span>
-                                                                <span class="category-second-item"><a href="">Bill Counters</a></span>
-                                                            </span>
-                                                        </span>
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled mb-40">
-                                                                <span class="dark-black fw-500 mb-16">Peripherals</span>
-                                                                <span class="category-second-item"><a href="">Mointer</a></span>
-                                                                <span class="category-second-item"><a href="">Mouse</a></span>
-                                                                <span class="category-second-item"><a href="">Keyboard</a></span>
-                                                                <span class="category-second-item"><a href="">Microphone</a></span>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="img-product-menu v-2">
-                                                        <span class="image-content">
-                                                            <span class="d-block h6 fw-400 white mb-4p">LAPTOP</span>
-                                                            <span class="d-block h6 fw-500 white mb-24">MACBOOK M1</span>
-                                                            <span class="d-block text-16 white mb-4p">Just from:</span>
-                                                            <span class="d-block h4 color-ter mb-32">$340.99</span>
-                                                            <a href="shop-list-1.html" class="cus-btn-3 sec">Shop Now</a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="all-category-list-item"><a href="shop-grid-2.html" class="all-category-list-link">Camera & Photo</a></span>
-                                            <span class="all-category-list-item"><a href="javascript:;" class="all-category-list-link d-flex align-items-center justify-content-between">Smartphone & Tablets<i class="fas fa-angle-right" aria-hidden="true"></i></a>
-                                                <span class="category-second-list">
-                                                    <span class="sub-menu-main-wrapper">
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled mb-40">
-                                                                <span class="dark-black fw-500 mb-16">Brands</span>
-                                                                <span class="category-second-item"><a href="">Apple </a></span>
-                                                                <span class="category-second-item"><a href="">Samsung</a></span>
-                                                                <span class="category-second-item"><a href="">Xiaomi</a></span>
-                                                                <span class="category-second-item"><a href="">Oppo </a></span>
-                                                                <span class="category-second-item"><a href=""> Huawei</a></span>
-                                                                <span class="category-second-item"><a href="">Nokia </a></span>
-                                                                <span class="category-second-item"><a href="">Vivo </a></span>
-                                                            </span>
-                                
-                                                            <span class="category-second-list-ul list-unstyled">
-                                                                <span class="dark-black fw-500 mb-16">Display Sizes</span>
-                                                                <span class="category-second-item"><a href="">Up to 6 Inches</a></span>
-                                                                <span class="category-second-item"><a href="">6 Inch - 8 Inch</a></span>
-                                                                <span class="category-second-item"><a href="">8 Inch - 10 Inch</a></span>
-                                                            </span>
-                                
-                                                        </span>
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled mb-40">
-                                                                <span class="dark-black fw-500 mb-16">Conditions</span>
-                                                                <span class="category-second-item"><a href="">All New</a></span>
-                                                                <span class="category-second-item"><a href="">Renewed</a></span>
-                                                                <span class="category-second-item"><a href="">Refurbished</a></span>
-                                                                <span class="category-second-item"><a href="">Used</a></span>
-                                                            </span>
-                                                            <span class="category-second-list-ul list-unstyled">
-                                                                <span class="dark-black fw-500 mb-16">Prices</span>
-                                                                <span class="category-second-item"><a href="">Up to $200</a></span>
-                                                                <span class="category-second-item"><a href="">$500 to $1000</a></span>
-                                                                <span class="category-second-item"><a href="">$1000 to $2000</a></span>
-                                                                <span class="category-second-item"><a href="">$2000 to $3000</a></span>
-                                                                <span class="category-second-item"><a href="">$3000 to $4000</a></span>
-                                                                <span class="category-second-item"><a href="">$4000 to $5000</a></span>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="img-product-menu v-3">
-                                                        <span class="image-content">
-                                                            <span class="d-block h6 fw-400 white mb-4p">MOBIME</span>
-                                                            <span class="d-block h6 fw-500 white mb-24">Mobile Phone</span>
-                                                            <span class="text-16 white mb-4p">Just from:</span>
-                                                            <span class="d-block h4 color-ter mb-32">$500.99</span>
-                                                            <a href="shop-list-1.html" class="cus-btn-3 sec">Shop Now</a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="all-category-list-item"><a href="javascript:;" class="all-category-list-link d-flex align-items-center justify-content-between">TV & Audio<i class="fas fa-angle-right" aria-hidden="true"></i></a>
-                                                <span class="category-second-list">
-                                                    <span class="sub-menu-main-wrapper">
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled mb-40">
-                                                                <span class="dark-black fw-500 mb-16">Brands</span>
-                                                                <span class="category-second-item"><a href="">Sony </a></span>
-                                                                <span class="category-second-item"><a href="">LG</a></span>
-                                                                <span class="category-second-item"><a href="">Samsung </a></span>
-                                                                <span class="category-second-item"><a href="">Panasonic</a></span>
-                                                                <span class="category-second-item"><a href="">Toshiba </a></span>
-                                                            </span>
-                                                            <span class="category-second-list-ul list-unstyled">
-                                                                <span class="dark-black fw-500 mb-16">Department</span>
-                                                                <span class="category-second-item"><a href="">Smart TVs</a></span>
-                                                                <span class="category-second-item"><a href="">LED TVs</a></span>
-                                                                <span class="category-second-item"><a href="">Curved TVs</a></span>
-                                                                <span class="category-second-item"><a href="">OLED TVs</a></span>
-                                                                <span class="category-second-item"><a href="">Plasma TVs</a></span>
-                                                                <span class="category-second-item"><a href="">Smart TVs 4K</a></span>
-                                                            </span>
-                                                        </span>
-                                                        <span class="wrapper-1">
-                                                            <span class="category-second-list-ul list-unstyled">
-                                                                <span class="dark-black fw-500 mb-16">Prices</span>
-                                                                <span class="category-second-item"><a href="">Up to $200</a></span>
-                                                                <span class="category-second-item"><a href="">$500 to $1000</a></span>
-                                                                <span class="category-second-item"><a href="">$1000 to $2000</a></span>
-                                                                <span class="category-second-item"><a href="">$2000 to $3000</a></span>
-                                                                <span class="category-second-item"><a href="">$3000 to $4000</a></span>
-                                                                <span class="category-second-item"><a href="">$4000 to $5000</a></span>
-                                                                <span class="category-second-item"><a href="">$5000 to $6000</a></span>
-                                                            </span>
-                                                        </span>
-                                                    </span>
-                                                    <span class="img-product-menu v-4">
-                                                        <span class="image-content">
-                                                            <span class="d-block h6 fw-400 white mb-4p">HEADPHONE</span>
-                                                            <span class="d-block h6 fw-500 white mb-24">Bass Headphones</span>
-                                                            <span class="text-16 white mb-4p">Just from:</span>
-                                                            <span class="d-block h4 color-ter mb-32">$180.00</span>
-                                                            <a href="shop-list-1.html" class="cus-btn-3 sec">Shop Now</a>
-                                                        </span>
-                                                    </span>
-                                                </span>
-                                            </span>
-                                            <span class="all-category-list-item"><a href="shop-grid-3.html" class="all-category-list-link">Home &
-                                                    Electronic</a></span>
-                                            <span class="all-category-list-item"><a href="shop-grid-4.html" class="all-category-list-link">Headphone &
-                                                    Speakers</a>
-                                            </span>
-                                            <span class="all-category-list-item"><a href="shop-grid-sidebar-1.html"
-                                                    class="all-category-list-link">Watches & Eyewear</a></span>
-                                            <span class="all-category-list-item"><a href="shop-grid-sidebar-2.html"
-                                                    class="all-category-list-link">Gamepad & Console</a></span>
+                                                    @endif
+                                                    @if($mainCategory->type=='single')
+
+                                                    <span class="all-category-list-item"><a href="{{ route('shop.by',['param'=>'cat','slug'=>$mainCategory->slug]) }}" class="all-category-list-link">{{$mainCategory->getName()}}</a></span>
+                                                    @endif
+                                                @if($loop->index > 6)
+                                                <span class="all-category-list-item"><a href="{{ route('categories') }}" class="all-category-list-link"><i class="fa fa-plus"></i> {{ $defaultContent['lang023'] }}</a></span>
+                                                @endif 
+                                                @endforeach
                                         </span>
                                     </label>
                                 </nav>
@@ -675,71 +514,7 @@
 </div>
 <!-- Mobile Menu End -->
 
-<!-- Modal -->
-<div class="modal fade" id="productQuickView" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="shop-detail">
-                    <div class="detail-wrapper">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="quick-image-box">
-                                    <img src="assets/media/products/quick-view-image.png" alt="">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="product-text-container bg-white br-20">
-                                    <div class="close-content text-end">
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <h3 class="fw-600 mb-16">Nexus Mobile Pro 256GB</h3>
-                                    <div class="d-flex align-items-center flex-wrap gap-16 mb-24">
-                                        <h5 class="color-sec">★★★★<span class="light-gray">★</span>&nbsp;&nbsp;<span
-                                                class="text-16 fw-400 dark-black">(02 Reviews)</span></h5>
-                                        <div class="vr-line vr-line-2"></div>
-                                        <p class="light-gray">Brand: <span class="color-primary">Beast</span></p>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-16 mb-24">
-                                        <p class="light-gray text-decoration-line-through">$450.00</p>
-                                        <h5>$400.00</h5>
-                                        <span class="label white">-12%</span>
-                                    </div>
-                                    <p class="light-gray mb-24">
-                                        Lorem ipsum dolor sit amet consectetur. Purus nulla nec in ac malesuada et nisi ipsum. Massa scelerisque...
-                                    </p>
-                                    <div class="hr-line mb-24"></div>
-                                    <div class="function-bar mb-16">
-                                        <div class="quantity quantity-wrap">
-                                            <div class="input-area quantity-wrap">
-                                                <input class="decrement" type="button" value="-">
-                                                <input type="text" name="quantity" value="1" maxlength="2" size="1"
-                                                    class="number">
-                                                <input class="increment" type="button" value="+">
-                                            </div>
-                                        </div>
-                                        <div class="cart-btn w-100">
-                                            <a href="cart.html" class="cus-btn-2 w-100">ADD TO CART</a>
-                                        </div>
-                                    </div>
-                                    <div class="hr-line mb-24"></div>
-                                    <div class="d-flex align-items-center gap-16 mb-16">
-                                        <h6>Category:</h6>
-                                        <p class="light-gray">Mobile Phone , Android , Flagship</p>
-                                    </div>
-                                    <div class="d-flex align-items-center gap-16 mb-16">
-                                        <h6>Tags:</h6>
-                                        <p class="light-gray">5G Compatible , <span>256GB Storage , </span> Student Phone</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+
 <!-- Modal -->
 <livewire:front.visual-components.app-cart-component />
 <!-- Modal -->

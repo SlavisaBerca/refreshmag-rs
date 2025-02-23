@@ -29,10 +29,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //cache()->forget('appsettings');
+        //cache()->forget('categories');
         View::composer('*', function ($view) {           
             $view->with('getCategories',cache()->remember('categories',60,function(){
-                return Category::where('categories.status',1)->orderBy('categories.position','asc')->get();
+                return Category::with(['getSubcategories.getChildrens','myProducts'])->where('categories.status',1)->orderBy('categories.position','asc')->get();
             }));
             $view->with('getLanguages',cache()->remember('languages',60,function(){
                 return Language::where('status',1)->get();

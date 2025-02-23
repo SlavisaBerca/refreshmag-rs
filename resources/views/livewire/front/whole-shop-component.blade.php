@@ -1,3 +1,3 @@
 <div>
-    {{-- The whole world belongs to you. --}}
+    {!! view('components.front.version-pages.version.'.$version.'.all-products') !!}
 </div>
